@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SharePlay</string>
+    <string name="search_request_failed">There was some error while searching. </string>
+    <string name="audio_url_request_failed">There was some error while playing audio. </string>
+    <string name="search_hint">Search Music ...</string>
+    <string name="home_page_title">1. Abcd Efgh Ijkl Mnop\n2. 1234 5678 9012</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

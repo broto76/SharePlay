@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LandingPageActivity">
+
+    <fragment
+        android:id="@+id/main_nav_host"
+        app:defaultNavHost="true"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/mini_player_container"
+        app:navGraph="@navigation/main_nav_graph"
+        />
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_blank_page_title"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        android:text="@string/home_page_title"-->
+<!--        android:textColor="#B597DD"-->
+<!--        android:textSize="30sp"-->
+<!--        />-->
+
+    <LinearLayout
+        android:id="@+id/mini_player_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_nav_host"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tv_mini_player_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mini_player_controls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <SeekBar
+                android:id="@+id/sb_progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0"
+                android:progress="50"
+                />
+
+            <TextView
+                android:id="@+id/tv_media_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="00:00"
+                android:textColor="#FFFFFF"
+                app:layout_constraintHorizontal_bias=".05"
+                app:layout_constraintVertical_bias=".25"
+                />
+
+            <TextView
+                android:id="@+id/tv_media_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="00:00"
+                android:textColor="#FFFFFF"
+                app:layout_constraintHorizontal_bias=".95"
+                app:layout_constraintVertical_bias=".25"
+                />
+
+            <ImageView
+                android:id="@+id/iv_play_pause_btn"
+                android:layout_width="40dp"
+                android:layout_height="85dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@android:drawable/ic_media_pause"
+                />
+
+            <ImageView
+                android:id="@+id/iv_player_prev"
+                android:layout_width="30dp"
+                android:layout_height="70dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias=".350"
+                android:src="@android:drawable/ic_media_previous"
+                />
+
+            <ImageView
+                android:id="@+id/iv_player_next"
+                android:layout_width="30dp"
+                android:layout_height="70dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias=".65"
+                android:src="@android:drawable/ic_media_next"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
